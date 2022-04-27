@@ -1,0 +1,23 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+<div class="d-flex p-2 justify-content-around ">
+<div class="card my-5 discard home_card shadow-lg p-3 mb-5  rounded">
+  <div class="card-body text-center">
+  <h4> Employee {{e.count}} </h4>
+</div>
+</div>
+
+<div class="card  my-5 discard home_card shadow-lg p-3 mb-5  rounded">
+  <div class="card-body text-center">
+  <h4> Active Employee  {{ae.count}}</h4>
+  </div>
+</div>
+
+<div class="card  my-5 discard home_card shadow-lg p-3 mb-5  rounded">
+  <div class="card-body text-center">
+  <h4> Employee on leave {{le.count}}</h4>
+  </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" >
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <title>Employee</title>
+</head>
+<body >
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info bg-gradient">
+        <div class="container-fluid">
+            <img src="{% static 'assets/logo.svg' %}" alt="" width="110" height="40" class="d-inline-block align-text-top">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+            <div class="navbar-nav ">
+              <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'Home' %}">Home</a>
+              {% url 'Create' as av %}
+                <a class="nav-link {% if request.path == av %}active{% endif %}" aria-current="page" href="{{av}}">Create</a>
+                
+                <a class="nav-link {% if request.path == '/Employee_List' %}active{% endif %}" href="/Employee_List">Employee List</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+</header>
+    {% block content %}
+
+
+    {% endblock %}
+    
+
+    
+<script src="{% static 'assets/js/bootstrap.min.js' %}" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>

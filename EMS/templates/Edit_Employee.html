@@ -1,0 +1,26 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+{% for msg in messages%}
+  <p class="alert alert-success alert-dismissible mt-2">{{msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </p>
+    {% endfor %}
+        
+    
+        <div class="card mx-auto my-5">
+            <div class="card-body ms-5">
+                 <h3>Edit Employee</h3><br><br>
+                <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-success btn-sm mt-2">Update</button>
+                </form>
+                
+            </div>
+        </div>  
+                
+                
+             
+    {% endblock %}
